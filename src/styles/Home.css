@@ -1,0 +1,394 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home {
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+              url('https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/475385491_122182334012094208_1609528450796256369_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHTQEeMIfUFw-OqMm9eGMWcEMhzHefhvuEQyHMd5-G-4XghhOe4tTtFoMnq3O5tuzGVARFQ3KR0Tk1pi0YGCRc9&_nc_ohc=xxOV6mduyNgQ7kNvwF63oBS&_nc_oc=Adlx60t8jmSVKi_1lcbtIpJJ4kdcSejMc_-l7YD1XfI5NuOBvxZ3Nb-o3MJTViGk12Y&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=CBMLEA2UVljfJalJA1XSGQ&oh=00_AftIcU6tpDArwEgzw-pbakeebqyuE2XPRcyJrN5IIE5qXA&oe=698799CA') center/cover no-repeat;display: flex;
+  align-items: center;
+  padding: 0 8%;
+}
+
+.hero-content {
+  color: white;
+  max-width: 700px;
+}
+
+.hero-label {
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.hero-pagination {
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+.page-number {
+  font-size: 1.1rem;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.page-divider {
+  width: 1px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ==================== ABOUT US SECTION ==================== */
+.about-section {
+  padding: 100px 8%;
+  background: #F9FAFB;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-text .section-header {
+  color: #92734A;
+}
+
+.about-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #4B5563;
+  margin-bottom: 1.5rem;
+}
+
+.curriculum-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.curriculum-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #4B5563;
+  line-height: 1.6;
+}
+
+.curriculum-list li::before {
+  content: '◦';
+  position: absolute;
+  left: 0;
+  color: #92734A;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.about-image {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==================== JOIN SECTION ==================== */
+.join-section {
+  padding: 100px 8%;
+  background: white;
+}
+
+.join-section .section-header {
+  color: #92734A;
+  margin-bottom: 3rem;
+}
+
+.join-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.join-card {
+  position: relative;
+  height: 350px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.join-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.join-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.join-card:hover img {
+  transform: scale(1.05);
+}
+
+.join-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.2rem 1.5rem;
+  color: white;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+}
+
+.join-label.black {
+  background: rgba(30, 30, 30, 0.9);
+}
+
+.join-label.yellow {
+  background: rgba(202, 138, 4, 0.9);
+}
+
+.join-label.green {
+  background: rgba(5, 150, 105, 0.9);
+}
+
+/* ==================== FOUNDERS SECTION ==================== */
+.founders-section {
+  background: linear-gradient(135deg, #8B9F5F 0%, #9BAD6F 100%);
+  color: white;
+  padding: 100px 8%;
+}
+
+.founders-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.5;
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.story-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.story-attribution {
+  font-style: italic;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  opacity: 0.95;
+}
+
+.discover-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 0.9rem 1.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.discover-button:hover {
+  background: white;
+  color: #8B9F5F;
+  transform: translateX(5px);
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.founders-image {
+  width: 100%;
+  height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.founders-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==================== DISCOVER SECTION ==================== */
+.discover-section {
+  padding: 100px 8%;
+  background: white;
+}
+
+.discover-section .section-header {
+  color: #6B7280;
+  margin-bottom: 3rem;
+}
+
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.discover-card {
+  position: relative;
+  height: 350px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discover-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.discover-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.discover-card:hover img {
+  transform: scale(1.05);
+}
+
+.card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.2rem 1.5rem;
+  color: white;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+}
+
+.card-label.orange {
+  background: rgba(231, 76, 60, 0.9);
+}
+
+.card-label.green {
+  background: rgba(22, 160, 133, 0.9);
+}
+
+.card-label.yellow {
+  background: rgba(243, 156, 18, 0.9);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .founders-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .discover-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 0 5%;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .hero-pagination {
+    display: none;
+  }
+  
+  .founders-section {
+    padding: 60px 5%;
+  }
+  
+  .discover-section {
+    padding: 60px 5%;
+  }
+}
