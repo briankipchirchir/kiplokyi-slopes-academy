@@ -71,12 +71,12 @@ export default function Home() {
         
         <div className="join-grid">
           <div className="join-card">
-            <img src="/images/preschool.jpg" alt="Pre-school students learning" />
+            <img src="https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/475989391_122182563680094208_421213809741696596_n.jpg?stp=dst-jpg_p180x540_tt6&_nc_cat=102&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeE0Q3g7hHhLa2rWyJ3ysMbRaJx_vkgwzeRonH--SDDN5HfDSR6y85sdd38Lbdfs0hgKJR0fRJzJnS4qX9ChL7XX&_nc_ohc=6LI8B_mYI68Q7kNvwH-y46c&_nc_oc=AdltoyUCtC4DjNMWJMasFXTLY5yx-rZzBH0wt4Wx-YzxpsK_6YGs4IsTf3nCvt97cPE&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=J8QwhjHBlgdb_FMrXj1gJQ&oh=00_AftW6H3efMRHEBNLQJssiwQoSxo4PVJ3uuku3ziL_AyqPg&oe=6988BCED" alt="Pre-school students learning" />
             <div className="join-label black">Pre-school</div>
           </div>
           
           <div className="join-card">
-            <img src="/images/cbc-curriculum.jpg" alt="CBC Curriculum students" />
+            <img src="https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/475712717_122182182086094208_6318814504427526330_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG70XNRYxWjTZSLlmQHFY7-b3Q24aUHX1JvdDbhpQdfUvLBuMOGBEK4aplVMxfGDa6d1icMnEMcKJ9DIYCZoOxB&_nc_ohc=VnYQ3XnFAUgQ7kNvwGZklYK&_nc_oc=AdnPVKTl6UAhvDyIrA6igRjSNbAJQpl-dVWBPgA5KPrX3mDTIE6KwOQAmBu1iWlhGlw&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=F0_uJ7bCGBkITm_gUFh_vw&oh=00_AftRuxw8gGEBALOPRq4h2WwORV0hQR0xD-7xlCD7LRFS8A&oe=6988B9B1" alt="CBC Curriculum students" />
             <div className="join-label yellow">CBC Curriculum</div>
           </div>
           
@@ -96,7 +96,7 @@ export default function Home() {
             </div>
             
             <p className="story-text">
-              The dream started off way back in 2005 when a couple called for a family meeting
+              The dream started off way back in 2018 when a couple called for a family meeting
               to share their desire to start a school.
             </p>
             
@@ -105,7 +105,7 @@ export default function Home() {
               space that encourages, trains and moulds future generations for God's glory.
             </p>
             
-            <p className="story-attribution">Mr. and Mrs. Mutegi</p>
+            <p className="story-attribution">Mr. and Mrs. Sammy</p>
             
             <button className="discover-button">
               DISCOVER OUR STORY
@@ -139,12 +139,12 @@ export default function Home() {
           </div>
           
           <div className="discover-card">
-            <img src="https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/475385491_122182334012094208_1609528450796256369_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHTQEeMIfUFw-OqMm9eGMWcEMhzHefhvuEQyHMd5-G-4XghhOe4tTtFoMnq3O5tuzGVARFQ3KR0Tk1pi0YGCRc9&_nc_ohc=xxOV6mduyNgQ7kNvwF63oBS&_nc_oc=Adlx60t8jmSVKi_1lcbtIpJJ4kdcSejMc_-l7YD1XfI5NuOBvxZ3Nb-o3MJTViGk12Y&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=CBMLEA2UVljfJalJA1XSGQ&oh=00_AftIcU6tpDArwEgzw-pbakeebqyuE2XPRcyJrN5IIE5qXA&oe=698799CA" alt="Fee Structure" />
+            <img src="https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/475837089_122182196342094208_2408657794692683682_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFAPEjx-wGO3w5MCsoJ0wxTxT0wUQAOIRDFPTBRAA4hELPYznz6S13_jLz62k-fJuakUnFaABO1wxl3blE79PlR&_nc_ohc=_NDnVhoiL0kQ7kNvwGoZeYA&_nc_oc=Adn-J6zCJx3Qqeot4pLvfYwuUoAvBUk-1e7OxOrzouURXpMyyfxni5Iobx5hvyekDXI&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=nYUmG5kt8fYwfTHDJSWMDA&oh=00_AftOYYbWxbfry_x3biRXpTc60bZL06nRVjmwuJpOuLlsdQ&oe=6988D960" alt="Fee Structure" />
             <div className="card-label green">Fee Structure</div>
           </div>
           
           <div className="discover-card">
-            <img src="https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/475385491_122182334012094208_1609528450796256369_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHTQEeMIfUFw-OqMm9eGMWcEMhzHefhvuEQyHMd5-G-4XghhOe4tTtFoMnq3O5tuzGVARFQ3KR0Tk1pi0YGCRc9&_nc_ohc=xxOV6mduyNgQ7kNvwF63oBS&_nc_oc=Adlx60t8jmSVKi_1lcbtIpJJ4kdcSejMc_-l7YD1XfI5NuOBvxZ3Nb-o3MJTViGk12Y&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=CBMLEA2UVljfJalJA1XSGQ&oh=00_AftIcU6tpDArwEgzw-pbakeebqyuE2XPRcyJrN5IIE5qXA&oe=698799CA" alt="Admission Process" />
+            <img src="https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/475457404_122182336478094208_1979830431634138515_n.jpg?stp=dst-jpg_p180x540_tt6&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFjjX8PPYRPs3wIaod4jCyXLHDXi99N14YscNeL303XhjWcDMmFJ0OT-aRMt3sWNUgXYC4eSZMtECpERoSldmoM&_nc_ohc=Dl9VAfIarwcQ7kNvwHDlcws&_nc_oc=AdmGAwwy6dFBI0cIkHREfe3VAw2lMaj3BZ17dOUrxTYQdGqYgzy-wyqdQ762Q27vOK0&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=vjRZuRKXrSDNT5pLIyLxLQ&oh=00_AfvVSGN4xH7_9iUaxqV0DPYQDv6f2vB_d9Jj8k5sfin56g&oe=6988DA8F" alt="Admission Process" />
             <div className="card-label yellow">Admission Process</div>
           </div>
         </div>
