@@ -7,6 +7,7 @@
   top: 0;
   z-index: 1000;
   transition: all 0.3s ease;
+  border: none;
   
 }
 
@@ -226,7 +227,7 @@
 }
 
 /* Mobile Menu */
-.mobile-menu {
+/* .mobile-menu {
   display: none;
   flex-direction: column;
   background: rgba(255, 255, 255, 0.95);
@@ -234,6 +235,19 @@
   -webkit-backdrop-filter: blur(20px);
   padding: 1rem 8%;
   border-top: 1px solid rgba(229, 231, 235, 0.5);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+} */
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 1rem 8%;
+  border-top: none; /* No border */
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
