@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Academics from "./pages/Academics";
 import StudentLife from "./pages/StudentLife";
 import Contact from "./pages/Contact";
+import FeeStructure from "./components/FeeStructure";
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"></link>
 
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/academics" element={<Academics />} />
         <Route path="/student-life" element={<StudentLife />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/fee" element={<FeeStructure />} />
       </Routes>
       </Box>
 

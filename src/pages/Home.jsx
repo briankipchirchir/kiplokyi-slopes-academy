@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Home.css';
 
 const heroImages = [
@@ -12,6 +13,7 @@ export default function Home() {
   const [currentImage, setCurrentImage] = useState(0);
   const [typedText, setTypedText] = useState("");
   const [isTypingComplete, setIsTypingComplete] = useState(false);
+    const navigate = useNavigate();
 
   // Refs for scroll animations
   const aboutRef = useRef(null);
@@ -221,7 +223,7 @@ export default function Home() {
             <div className="card-label orange">Academic Highlights</div>
           </div>
           
-          <div className="discover-card">
+          <div className="discover-card" onClick={() => navigate('/fee')}>
             <img src="https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/475837089_122182196342094208_2408657794692683682_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFAPEjx-wGO3w5MCsoJ0wxTxT0wUQAOIRDFPTBRAA4hELPYznz6S13_jLz62k-fJuakUnFaABO1wxl3blE79PlR&_nc_ohc=_NDnVhoiL0kQ7kNvwGoZeYA&_nc_oc=Adn-J6zCJx3Qqeot4pLvfYwuUoAvBUk-1e7OxOrzouURXpMyyfxni5Iobx5hvyekDXI&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=nYUmG5kt8fYwfTHDJSWMDA&oh=00_AftOYYbWxbfry_x3biRXpTc60bZL06nRVjmwuJpOuLlsdQ&oe=6988D960" alt="Fee Structure" />
             <div className="card-label green">Fee Structure</div>
           </div>
