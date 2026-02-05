@@ -7,21 +7,41 @@ const heroImages = [
   'https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/487513352_122191207670094208_5466276275303908927_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeECKrnRepoR9XpxoB3CWnNQKC7FqIbyRv0oLsWohvJG_V_XFzhU001aAr_LNWd23_MkMtg0pQgpWlIYOq2wgJXr&_nc_ohc=xXZPs5mrKeQQ7kNvwFov9Hu&_nc_oc=Adl1mXc5XrZfbvrM0DNyO_cidaEubJwiccKAqWWdYEaQ076clEULDn_-qwCTJwAsSow&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=gnmA5ZTRWmAmidGoiXwdWg&oh=00_AfuYRWNg8-78BCHeg8Lha2e1dazDqQFJGsvDNCghuLgICg&oe=6987CA24'
 ];
 
+const heroText = "A Place to Learn, Explore, and Shine. Shaping Minds, Building Futures";
+
 export default function Home() {
 
   const [currentImage, setCurrentImage] = useState(0);
+  const [typedText, setTypedText] = useState("");
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+  
 
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      // Swap images every 200px of scroll
-      setCurrentImage(scrollY > 200 ? 1 : 0);
-    };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+   useEffect(() => {
+    const imageInterval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(imageInterval);
   }, []);
+
+   useEffect(() => {
+    let index = 0;
+    const typingInterval = setInterval(() => {
+      if (index < heroText.length) {
+        setTypedText(heroText.substring(0, index + 1)); // Use substring instead
+        index++;
+      } else {
+        setIsTypingComplete(true); // Mark typing as complete
+        clearInterval(typingInterval);
+      }
+    }, 80);
+
+    return () => clearInterval(typingInterval);
+  }, []); 
+
   return (
     <div className="home">
       {/* Hero Section */}
@@ -33,15 +53,23 @@ export default function Home() {
 
         <div className="hero-content">
           <p className="hero-label">KIPLOKYI SLOPES ACADEMY</p>
-          <h1 className="hero-title">
-            A Place to Learn, Explore, and Shine<br />Shaping Minds, Building Futures"
+          <h1 className={`hero-title ${isTypingComplete ? 'typing-complete' : ''}`}>
+            {typedText}
           </h1>
         </div>
 
         <div className="hero-pagination">
-          <span className="page-number">01</span>
-          <div className="page-divider"></div>
-          <span className="page-number">02</span>
+          {heroImages.map((_, index) => (
+            <div key={index} className="pagination-item">
+              <span 
+                className={`page-number ${currentImage === index ? 'active' : ''}`}
+                onClick={() => setCurrentImage(index)}
+              >
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              {index < heroImages.length - 1 && <div className="page-divider"></div>}
+            </div>
+          ))}
         </div>
       </section>
 

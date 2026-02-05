@@ -10,6 +10,8 @@ import Academics from "./pages/Academics";
 import StudentLife from "./pages/StudentLife";
 import Contact from "./pages/Contact";
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"></link>
+
 export default function App() {
   return (
     <BrowserRouter>
