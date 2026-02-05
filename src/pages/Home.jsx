@@ -1,6 +1,5 @@
-import React,{ useState, useEffect }  from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Home.css';
-
 
 const heroImages = [
   'https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/475385491_122182334012094208_1609528450796256369_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHTQEeMIfUFw-OqMm9eGMWcEMhzHefhvuEQyHMd5-G-4XghhOe4tTtFoMnq3O5tuzGVARFQ3KR0Tk1pi0YGCRc9&_nc_ohc=xxOV6mduyNgQ7kNvwF63oBS&_nc_oc=Adlx60t8jmSVKi_1lcbtIpJJ4kdcSejMc_-l7YD1XfI5NuOBvxZ3Nb-o3MJTViGk12Y&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=vjRZuRKXrSDNT5pLIyLxLQ&oh=00_AftqQCTEnrL0ZnW5YUNQtK2vitz8PzVBVnjwpsvwqDzmXA&oe=6988B30A',
@@ -10,42 +9,78 @@ const heroImages = [
 const heroText = "A Place to Learn, Explore, and Shine. Shaping Minds, Building Futures";
 
 export default function Home() {
-
   const [currentImage, setCurrentImage] = useState(0);
   const [typedText, setTypedText] = useState("");
   const [isTypingComplete, setIsTypingComplete] = useState(false);
-  
 
+  // Refs for scroll animations
+  const aboutRef = useRef(null);
+  const joinRef = useRef(null);
+  const foundersRef = useRef(null);
+  const discoverRef = useRef(null);
 
-
-
-   useEffect(() => {
+  // Auto-change images every 5 seconds
+  useEffect(() => {
     const imageInterval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 5000); // Change image every 5 seconds
+    }, 5000);
 
     return () => clearInterval(imageInterval);
   }, []);
 
-   useEffect(() => {
+  // Typing effect
+  useEffect(() => {
     let index = 0;
     const typingInterval = setInterval(() => {
       if (index < heroText.length) {
-        setTypedText(heroText.substring(0, index + 1)); // Use substring instead
+        setTypedText(heroText.substring(0, index + 1));
         index++;
       } else {
-        setIsTypingComplete(true); // Mark typing as complete
+        setIsTypingComplete(true);
         clearInterval(typingInterval);
       }
     }, 80);
 
     return () => clearInterval(typingInterval);
-  }, []); 
+  }, []);
+
+  // Scroll animation observer
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px'
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    const refs = [aboutRef, joinRef, foundersRef, discoverRef];
+    refs.forEach(ref => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      refs.forEach(ref => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      });
+    };
+  }, []);
 
   return (
     <div className="home">
       {/* Hero Section */}
-     <section className="hero-section">
+      <section className="hero-section">
         <div
           className="hero-background"
           style={{ backgroundImage: `url(${heroImages[currentImage]})` }}
@@ -73,16 +108,13 @@ export default function Home() {
         </div>
       </section>
 
-
-
-        {/* About Us Section */}
-      <section className="about-section">
+      {/* About Us Section - Slide from LEFT */}
+      <section ref={aboutRef} className="about-section slide-from-left">
         <div className="about-container">
           <div className="about-text">
             <div className="section-header">
               <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
               </svg>
               <h2>ABOUT US</h2>
             </div>
@@ -111,14 +143,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Join Kiplokyi Section */}
-      <section className="join-section">
+      {/* Join Kiplokyi Section - Slide from RIGHT */}
+      <section ref={joinRef} className="join-section slide-from-right">
         <div className="section-header">
           <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            <path d="M12 20h9"/>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
           </svg>
           <h2>JOIN KIPLOKYI SLOPES</h2>
         </div>
@@ -133,18 +163,17 @@ export default function Home() {
             <img src="https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/475712717_122182182086094208_6318814504427526330_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG70XNRYxWjTZSLlmQHFY7-b3Q24aUHX1JvdDbhpQdfUvLBuMOGBEK4aplVMxfGDa6d1icMnEMcKJ9DIYCZoOxB&_nc_ohc=VnYQ3XnFAUgQ7kNvwGZklYK&_nc_oc=AdnPVKTl6UAhvDyIrA6igRjSNbAJQpl-dVWBPgA5KPrX3mDTIE6KwOQAmBu1iWlhGlw&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=F0_uJ7bCGBkITm_gUFh_vw&oh=00_AftRuxw8gGEBALOPRq4h2WwORV0hQR0xD-7xlCD7LRFS8A&oe=6988B9B1" alt="CBC Curriculum students" />
             <div className="join-label yellow">CBC Curriculum</div>
           </div>
-          
-          
         </div>
       </section>
 
-      {/* Founders Story Section */}
-      <section className="founders-section">
+      {/* Founders Story Section - Slide from LEFT */}
+      <section ref={foundersRef} className="founders-section slide-from-left">
         <div className="founders-content">
           <div className="founders-text">
             <div className="section-header">
               <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
               </svg>
               <h2>THE FOUNDERS STORY</h2>
             </div>
@@ -176,8 +205,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Discover More Section */}
-      <section className="discover-section">
+      {/* Discover More Section - Slide from RIGHT */}
+      <section ref={discoverRef} className="discover-section slide-from-right">
         <div className="section-header">
           <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <circle cx="12" cy="12" r="10"/>

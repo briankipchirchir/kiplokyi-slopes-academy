@@ -125,6 +125,38 @@ section {
   display: none;
 }
 
+
+/* ==================== SCROLL ANIMATIONS ==================== */
+
+/* Slide from Left */
+.slide-from-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-from-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide from Right */
+.slide-from-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-from-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
 /* ==================== DESKTOP ==================== */
 @media (min-width: 1024px) {
   .hero-pagination {
