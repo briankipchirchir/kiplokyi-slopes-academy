@@ -94,7 +94,7 @@ section {
 .hero-title {
   font-size: clamp(2.2rem, 8vw, 4.5rem);
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 /* Hide pagination on mobile */

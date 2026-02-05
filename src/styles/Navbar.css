@@ -300,9 +300,10 @@
     padding: 0.8rem 5%;
   }
   
-  /* Hide logo text on mobile, keep only circle */
   .logo-text {
-    display: none;
+    display: flex; /* override the hide */
+    flex-direction: column;
+    font-size: 0.7rem; /* smaller text for mobile */
   }
   
   .logo-circle {

@@ -34,7 +34,7 @@ export default function Home() {
         <div className="hero-content">
           <p className="hero-label">KIPLOKYI SLOPES ACADEMY</p>
           <h1 className="hero-title">
-            The best of holistic<br />learning
+            A Place to Learn, Explore, and Shine<br />Shaping Minds, Building Futures"
           </h1>
         </div>
 
