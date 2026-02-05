@@ -88,12 +88,19 @@ export default function Home() {
           style={{ backgroundImage: `url(${heroImages[currentImage]})` }}
         ></div>
 
-        <div className="hero-content">
-          <p className="hero-label">KIPLOKYI SLOPES ACADEMY</p>
-          <h1 className={`hero-title ${isTypingComplete ? 'typing-complete' : ''}`}>
-            {typedText}
-          </h1>
-        </div>
+  <div className="hero-content">
+  {/* School Name - main hero title */}
+  <h1 className="hero-school-name">
+    KIPLOKYI SLOPES ACADEMY
+  </h1>
+
+  {/* Typing subtitle */}
+  <h2 className={`hero-subtitle ${isTypingComplete ? 'typing-complete' : ''}`}>
+    {typedText}
+  </h2>
+</div>
+
+
 
         <div className="hero-pagination">
           {heroImages.map((_, index) => (

@@ -455,3 +455,66 @@ html {
     background: rgba(255,255,255,.6);
   }
 }
+
+
+/* Hero Section School Name */
+.hero-school-name {
+  font-size: clamp(3rem, 8vw, 5rem); /* Bigger for top hero */
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #FDB913; /* Brand yellow */
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+  animation: fadeInTop 1.5s ease forwards;
+}
+
+/* Typing subtitle */
+.hero-subtitle {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-align: center;
+  line-height: 1.4;
+  display: inline-block;
+  position: relative;
+  animation: fadeIn 2s ease forwards;
+}
+
+/* Blinking pencil cursor for typing */
+.hero-subtitle::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FDB913' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: blink 0.8s ease-in-out infinite;
+  vertical-align: baseline;
+}
+
+.hero-subtitle.typing-complete::after {
+  display: none;
+  animation: none;
+}
+
+/* Fade-in animations */
+@keyframes fadeInTop {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
