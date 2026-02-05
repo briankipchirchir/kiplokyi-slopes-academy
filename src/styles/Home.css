@@ -37,18 +37,47 @@ section {
 
 /* ==================== HERO SECTION ==================== */
 .hero-section {
-  min-height: 100vh;
-  background:
-    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
-    url('https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/475385491_122182334012094208_1609528450796256369_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHTQEeMIfUFw-OqMm9eGMWcEMhzHefhvuEQyHMd5-G-4XghhOe4tTtFoMnq3O5tuzGVARFQ3KR0Tk1pi0YGCRc9&_nc_ohc=xxOV6mduyNgQ7kNvwF63oBS&_nc_oc=Adlx60t8jmSVKi_1lcbtIpJJ4kdcSejMc_-l7YD1XfI5NuOBvxZ3Nb-o3MJTViGk12Y&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=vjRZuRKXrSDNT5pLIyLxLQ&oh=00_AftqQCTEnrL0ZnW5YUNQtK2vitz8PzVBVnjwpsvwqDzmXA&oe=6988B30A')
-    center / cover no-repeat;
-
+  position: relative;
+  min-height: 100vh; /* Changed from min-height to height for consistency */
+  height: 100vh; /* Add explicit height */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 0 1.25rem;
+  overflow: hidden;
 }
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* This should cover the full hero section */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  transition: background-image 1s ease-in-out;
+}
+
+/* Add this to ensure the background covers properly */
+.hero-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Optional: Add slight dark overlay for better text readability */
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 
 .hero-content {
   color: #fff;

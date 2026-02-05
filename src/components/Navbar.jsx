@@ -20,9 +20,21 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         {/* Logo */}
-        <Link to="/" className="navbar-logo">
-          <img src="https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/475385491_122182334012094208_1609528450796256369_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHTQEeMIfUFw-OqMm9eGMWcEMhzHefhvuEQyHMd5-G-4XghhOe4tTtFoMnq3O5tuzGVARFQ3KR0Tk1pi0YGCRc9&_nc_ohc=xxOV6mduyNgQ7kNvwF63oBS&_nc_oc=Adlx60t8jmSVKi_1lcbtIpJJ4kdcSejMc_-l7YD1XfI5NuOBvxZ3Nb-o3MJTViGk12Y&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=CBMLEA2UVljfJalJA1XSGQ&oh=00_AftIcU6tpDArwEgzw-pbakeebqyuE2XPRcyJrN5IIE5qXA&oe=698799CA" alt="Kiplokyi Slopes Academy" className="logo-img" />
-        </Link>
+<Link to="/" className="navbar-logo">
+  <div className="logo-container">
+    <div className="logo-circle">
+      <img 
+        src="https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/487513352_122191207670094208_5466276275303908927_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeECKrnRepoR9XpxoB3CWnNQKC7FqIbyRv0oLsWohvJG_V_XFzhU001aAr_LNWd23_MkMtg0pQgpWlIYOq2wgJXr&_nc_ohc=xXZPs5mrKeQQ7kNvwFov9Hu&_nc_oc=Adl1mXc5XrZfbvrM0DNyO_cidaEubJwiccKAqWWdYEaQ076clEULDn_-qwCTJwAsSow&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=gnmA5ZTRWmAmidGoiXwdWg&oh=00_AfuYRWNg8-78BCHeg8Lha2e1dazDqQFJGsvDNCghuLgICg&oe=6987CA24" 
+        alt="Kiplokyi Slopes Academy" 
+        className="logo-img" 
+      />
+    </div>
+    <div className="logo-text">
+      <span className="logo-name">KIPLOKYI SLOPES</span>
+      <span className="logo-tagline">ACADEMY</span>
+    </div>
+  </div>
+</Link>
 
         {/* Desktop Navigation */}
         <ul className="nav-menu">
@@ -67,8 +79,8 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button 
-          className="mobile-menu-toggle"
+          <button 
+          className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span></span>
@@ -78,20 +90,19 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="mobile-menu">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`mobile-nav-link ${location.pathname === link.path ? 'active' : ''}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {link.title}
-            </Link>
-          ))}
-        </div>
-      )}
+     <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+        {navLinks.map((link) => (
+          <Link
+            key={link.path}
+            to={link.path}
+            className={`mobile-nav-link ${location.pathname === link.path ? 'active' : ''}`}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {link.title}
+          </Link>
+        ))}
+        <button className="mobile-portal-btn">PORTAL</button>
+      </div>
     </nav>
   );
 }

@@ -1,17 +1,43 @@
-import React from 'react';
+import React,{ useState, useEffect }  from 'react';
 import '../styles/Home.css';
 
+
+const heroImages = [
+  'https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/475385491_122182334012094208_1609528450796256369_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHTQEeMIfUFw-OqMm9eGMWcEMhzHefhvuEQyHMd5-G-4XghhOe4tTtFoMnq3O5tuzGVARFQ3KR0Tk1pi0YGCRc9&_nc_ohc=xxOV6mduyNgQ7kNvwF63oBS&_nc_oc=Adlx60t8jmSVKi_1lcbtIpJJ4kdcSejMc_-l7YD1XfI5NuOBvxZ3Nb-o3MJTViGk12Y&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=vjRZuRKXrSDNT5pLIyLxLQ&oh=00_AftqQCTEnrL0ZnW5YUNQtK2vitz8PzVBVnjwpsvwqDzmXA&oe=6988B30A',
+  'https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/487513352_122191207670094208_5466276275303908927_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeECKrnRepoR9XpxoB3CWnNQKC7FqIbyRv0oLsWohvJG_V_XFzhU001aAr_LNWd23_MkMtg0pQgpWlIYOq2wgJXr&_nc_ohc=xXZPs5mrKeQQ7kNvwFov9Hu&_nc_oc=Adl1mXc5XrZfbvrM0DNyO_cidaEubJwiccKAqWWdYEaQ076clEULDn_-qwCTJwAsSow&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=gnmA5ZTRWmAmidGoiXwdWg&oh=00_AfuYRWNg8-78BCHeg8Lha2e1dazDqQFJGsvDNCghuLgICg&oe=6987CA24'
+];
+
 export default function Home() {
+
+  const [currentImage, setCurrentImage] = useState(0);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      // Swap images every 200px of scroll
+      setCurrentImage(scrollY > 200 ? 1 : 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
     <div className="home">
       {/* Hero Section */}
-      <section className="hero-section">
+     <section className="hero-section">
+        <div
+          className="hero-background"
+          style={{ backgroundImage: `url(${heroImages[currentImage]})` }}
+        ></div>
+
         <div className="hero-content">
           <p className="hero-label">KIPLOKYI SLOPES ACADEMY</p>
           <h1 className="hero-title">
             The best of holistic<br />learning
           </h1>
         </div>
+
         <div className="hero-pagination">
           <span className="page-number">01</span>
           <div className="page-divider"></div>
