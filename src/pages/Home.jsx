@@ -209,7 +209,7 @@ export default function Home() {
           </div>
           
           <div className="founders-image">
-            <img src="https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/468309383_122173728026094208_6830148461464120064_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHzXWaLjamgmrtI6HW3-bc5bjBnES6zlwtuMGcRLrOXC97YHDynyBzOQ_JishwqJ79KQkSfscVq8tdtaRrtbiQO&_nc_ohc=17PE0A8qtqQQ7kNvwGKVcVK&_nc_oc=AdkOqAw4wB94lqgKy2AsjqXSQ6LVcc3ygQXyfXpckcMKpW_Ur3IZPadwTLudFTwBCLM&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=dxXL2jdRPSrUfJ7hCx0xyw&oh=00_AfukxPn_ZbvKGMZf9xy7r92WKLH1HL9y5FYxi8QE1iJcaA&oe=6987ADDE" alt="School Founders" />
+            <img src="https://scontent.fnbo1-1.fna.fbcdn.net/v/t39.30808-6/475385491_122182334012094208_1609528450796256369_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHTQEeMIfUFw-OqMm9eGMWcEMhzHefhvuEQyHMd5-G-4XghhOe4tTtFoMnq3O5tuzGVARFQ3KR0Tk1pi0YGCRc9&_nc_ohc=xxOV6mduyNgQ7kNvwF63oBS&_nc_oc=Adlx60t8jmSVKi_1lcbtIpJJ4kdcSejMc_-l7YD1XfI5NuOBvxZ3Nb-o3MJTViGk12Y&_nc_zt=23&_nc_ht=scontent.fnbo1-1.fna&_nc_gid=vjRZuRKXrSDNT5pLIyLxLQ&oh=00_AftqQCTEnrL0ZnW5YUNQtK2vitz8PzVBVnjwpsvwqDzmXA&oe=6988B30A" alt="School Founders" />
           </div>
         </div>
       </section>
