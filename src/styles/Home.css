@@ -33,6 +33,7 @@ section {
   width: 28px;
   height: 28px;
   stroke-width: 1.5;
+  color: goldenrod;
 }
 /* ==================== HERO SECTION ==================== */
 .hero-section {
@@ -455,6 +456,13 @@ html {
     background: rgba(255,255,255,.6);
   }
 }
+
+.new-title {
+  color: #00529b;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 
 
 /* Hero Section School Name */

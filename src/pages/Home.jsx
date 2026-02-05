@@ -126,7 +126,7 @@ export default function Home() {
               <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
               </svg>
-              <h2>ABOUT US</h2>
+              <h2 className="new-title">ABOUT US</h2>
             </div>
             
             <p className="about-description">
@@ -160,7 +160,7 @@ export default function Home() {
             <path d="M12 20h9"/>
             <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
           </svg>
-          <h2>JOIN KIPLOKYI SLOPES</h2>
+          <h2  className="new-title">JOIN KIPLOKYI SLOPES</h2>
         </div>
         
         <div className="join-grid">
@@ -185,7 +185,7 @@ export default function Home() {
                 <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
                 <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
               </svg>
-              <h2>THE FOUNDERS STORY</h2>
+              <h2  className="new-title">THE FOUNDERS STORY</h2>
             </div>
             
             <p className="story-text">
@@ -222,7 +222,7 @@ export default function Home() {
             <circle cx="12" cy="12" r="10"/>
             <path d="M8 12h8m-4-4 4 4-4 4"/>
           </svg>
-          <h2>DISCOVER MORE</h2>
+          <h2  className="new-title">DISCOVER MORE</h2>
         </div>
         
         <div className="discover-grid">
